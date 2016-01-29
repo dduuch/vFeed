@@ -82,8 +82,9 @@ class Stats(object):
         print"---------------------------------------------------------------"
 
         self.cur.execute("SELECT * FROM stat_new_cve; ")
+        cve_list = []
         for self.data in self.cur.fetchall():
             # To display CVE summary, just replace with print self.data[0], self.data[1]
-            print self.data[0]
+            cve_list.append(self.data[0])
 
-        return ""
+        return cve_list

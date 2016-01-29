@@ -23,8 +23,7 @@ class CveInfo(object):
             item = {"id": self.cve, "published": self.data[1], "modified": self.data[2],
                     "summary": self.data[3], "url": cve_url + self.cve}
             self.info.append(item)
-
-        return json.dumps(self.info, indent=4)
+        return self.info
 
     def get_cwe(self):
         """ CWE method
